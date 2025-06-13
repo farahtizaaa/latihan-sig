@@ -4,7 +4,45 @@ format: html
 editor: visual
 ---
 
-## Quarto
+```{r, Echo=FALSE}
+library(sf)
+library(leaflet)
+```
+
+
+## GIS dengan RStudi dan leaflet
+
+ini adalah contoh peta interaktif dengan menggunakan leaflet. 
+
+```{r}
+#JAWATIMUR<-st_read("C:/Users/HP/OneDrive/Documents/JAWATIMUR.shp")
+# set leaflet plot 
+leaflet()%>%
+
+#menambahkan peta dasar openStreet
+addTiles()%>%
+
+#mengatur wilayah yang ditampilkan 
+setView(lat= -8.163825127613, lng = 113.71425767135895, zoom = 13)%>%
+
+#menambahkan marker pada peta
+addMarkers(lat = -8.1638625449728, lng  = 113.71419301073362, popup = "Gedung Daun Unej" )
+
+
+```
+
+# set leaflet plot 
+leaflet(JAWATIMUR)%>%
+
+#menambahkan peta dasar openStreet
+addTiles()%>%
+
+#mengatur wilayah yang ditampilkan 
+setView(lat= -8.163825127613, lng = 113.71425767135895, zoom = 13)%>%
+
+#menambahkan marker pada peta
+addMarkers(lat = -8.1638625449728, ing = 113.71419301073362, popup = "Gedung Daun Unej" )
+
 
 Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
 
